@@ -24,7 +24,9 @@
 #define TIMER_A0_PERIOD_CONSTANT 15000
 
 /**
- * @brief
+ * @brief Initialize Timer A0 in PWM mode
+ *
+ * This function initializes Timer A0 to generate PWM signals on specific pins. It configures the timer's clock source, Input divider and mode control
  *
  * @param period_constant
  *
