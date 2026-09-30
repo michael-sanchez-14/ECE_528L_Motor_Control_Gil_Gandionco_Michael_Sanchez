@@ -140,7 +140,11 @@ void Drive_Pattern_1()
 }
 
 /**
- * @brief
+ * @brief This function handles collisions
+ *
+ * If a collision is detected we first stop the motor then wait 2 seconds, next we move the motors backwards at a duty cycle of 30%.
+ * Next we wait 2 seconds then stop the motors again, after waiting another second we make the robot turn to the right with a 10% duty cycle.
+ * Next we wait for 4 seconds and stop the motors, then finally we wait 2 seconds then set the collision flage to 0.
  *
  * @param None
  *
@@ -149,37 +153,37 @@ void Drive_Pattern_1()
 void Handle_Collision()
 {
     // Stop the motors
-
+    Motor_Stop();
 
     // Make a function call to Clock_Delay1ms(2000)
-
+    Clock_Delay1ms(2000);
 
     // Move the motors backward with 30% duty cycle
-
+    Motor_Backward(4500, 4500);
 
     // Make a function call to Clock_Delay1ms(2000)
-
+    Clock_Delay1ms(2000);
 
     // Stop the motors
-
+    Motor_Stop();
 
     // Make a function call to Clock_Delay1ms(1000)
-
+    Clock_Delay1ms(1000);
 
     // Make the robot turn to the right with 10% duty cycle
-
+    Motor_Right(1500, 1500);
 
     // Make a function call to Clock_Delay1ms(4000)
-
+    Clock_Delay1ms(4000);
 
     // Stop the motors
-
+    Motor_Stop();
 
     // Make a function call to Clock_Delay1ms(2000)
-
+    Clock_Delay1ms(2000);
 
     // Set the collision_detected flag to 0
-
+    collision_detected = 0;
 }
 
 int main(void)
