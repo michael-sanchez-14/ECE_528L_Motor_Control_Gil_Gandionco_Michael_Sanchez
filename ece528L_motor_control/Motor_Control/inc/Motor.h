@@ -19,8 +19,8 @@
 #include "../inc/Timer_A0_PWM.h"
 
 /**
- * @brief
- *
+ * @brief Initializes the motors
+ * By setting and clearing certain bits from different ports we initialize the motor. Initializes timer A0 with a period of 20 ms using a period constant of 15000
  * @param None
  *
  * @return None
@@ -56,7 +56,10 @@ void Motor_Forward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 void Motor_Backward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Move the motors left with specified duty cycles
+ *
+ * This function configures the motors to move left. It updates the duty cycle for both left and
+ * right motors using Timer A0 PWM control to adjust motor speed.
  *
  * @param left_duty_cycle
  *
@@ -67,7 +70,10 @@ void Motor_Backward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 void Motor_Left(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Move the motos right with specified duty cycles
+ *
+ * This function configures the motors to move right. It updates the duty cycle for both left and right motors
+ * using Time A0 PWM control to adjust motor speed.
  *
  * @param left_duty_cycle
  *
