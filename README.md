@@ -23,3 +23,6 @@ This lab introduces us to different modules within the MSP432 LauchPad. Specific
 ## Author Contribution
 
 ## References
+
+* MSP432P4xx SimpleLink™ Microcontrollers
+Technical Reference Manual
