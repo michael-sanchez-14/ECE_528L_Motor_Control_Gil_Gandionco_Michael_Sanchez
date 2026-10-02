@@ -80,7 +80,11 @@ void SysTick_Handler(void)
  */
 void Bumper_Switches_Handler(uint8_t bumper_switch_state)
 {
-    printf("Collision Detected! Bumper Switch State: 0x%02X\n", bumper_switch_state);
+    if(collision_detected == 0)
+    {
+        printf("Collision Detected! Bumper Switch State: 0x%02X\n", bumper_switch_state);
+        collision_detected = 1;
+    }
 }
 
 /**
@@ -236,13 +240,13 @@ int main(void)
 
 //        Drive_Pattern_1();
 
-//        if (collision_detected == 1)
-//        {
-//            Handle_Collision();
-//        }
-//        else
-//        {
-//            Motor_Forward(4500, 4500);
-//        }
+        if (collision_detected == 1)
+        {
+            Handle_Collision();
+        }
+        else
+        {
+            Motor_Forward(4500, 4500);
+        }
     }
 }
