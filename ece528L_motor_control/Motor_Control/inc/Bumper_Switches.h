@@ -57,7 +57,10 @@
 void (*Bumper_Task)(uint8_t bumper_switch_state);
 
 /**
- * @brief
+ * @brief Initializes the Bumper switches, also enables interrupts.
+ *
+ * This function initializes the bumper switches by using several different masks. We also clear any existing bits
+ * as well as enable interrupts on certain bits. We set the priority level of the interrupts to 0 and enable interrupt request 38.
  *
  * @param task A pointer to the user-defined function that will be called on a falling edge event.
  *
