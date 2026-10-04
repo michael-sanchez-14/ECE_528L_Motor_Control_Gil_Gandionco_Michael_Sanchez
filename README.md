@@ -15,12 +15,21 @@ The Motor Control lab interfaces with the following:
 ## Overview
 This lab introduces us to different modules within the MSP432 LauchPad. Specifically we worked with SysTick and Timer_A. We utilized the Timer_A module to output PWM signals for our Motor Driver. 
 ## Componets Used:
-
+* MSP432 LauchPard
+* Bumper Switches
+* HS-485HB Servo
+* Oscilloscope
+* Oscilloscope probes
 ## Analysis and Results:
-
+The first think that we did for this lab was to connect the HS-485HB to the board. After making the proper connections we uncommented certain portions of the code to run, once this was done we used an oscilloscope, with a pin connected to P5.6, for our case we only had one servo so we were not able to capture screenshots for both pins. We used the oscilloscope to check when the servo was at 0 degrees, this was indicated by a red light. And when the servo was at 180 degrees, indicated by a blue light. Once these images were taken we also need to make sure the pulse widths were correct, they were. These images can be found in the [image](/images/) files. 
 ## Known Issues or Limitaitons
+During this Lab we did not find any issues or limitations.
 
 ## Author Contribution
+Both of us collaborated on the main procedure for this lab.
+* Michael Sanchez
+    * Worked on Tasks 4, 5 and part of 7
+
 
 ## References
 
