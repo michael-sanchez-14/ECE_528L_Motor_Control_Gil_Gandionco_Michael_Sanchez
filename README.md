@@ -32,7 +32,7 @@ The next part of the lab involves using interrupts to detect collision. It began
 
 The robot has 6 bumper switches connected to Port 4 of the MSP432. The bumper switches are configured to be active-low. When not pressed, it remains logic high. When pressed, it becomes active low. 
 
-Interrupts are generated when any of the bumper switches are pressed. Interrupt flags are cleared in the interrupt service routine and Bumper_Switches_Handler is executed. It would print out the 8-bit value read from the bumper switches and sets P8.7 pin as high. The 8-bit values can be found [image](/images/) files. The serial teriminal shows several printf messages for a single press of the bumper switches, highlighting the lack of debounce filter connected to the bump switches. The voltages for P8.7 (Back Right RED led) and P4.0 (BPM0) were measured in the oscilloscope. Images of the results can be found [image](/images/) files. The bumper switch (BPM0) exhibited switch bouncing. P8.7 toggled at the falling edge of the BMP0 signal.
+Interrupts are generated when any of the bumper switches are pressed. Interrupt flags are cleared in the interrupt service routine and Bumper_Switches_Handler is executed. It would print out the 8-bit value read from the bumper switches and sets P8.7 pin as high. The 8-bit values can be found [image](/images/) files. The serial teriminal showed several printf messages for a single press of the bumper switches, highlighting the lack of debounce filter connected to the bump switches. The voltages for P8.7 (Back Right RED led) and P4.0 (BPM0) were measured in the oscilloscope. Images of the results can be found [image](/images/) files. The bumper switch (BPM0) exhibited switch bouncing. P8.7 toggled at the falling edge of the BMP0 signal.
 
 After measuring the voltages, Timer_A0_PWM_Init was implemented to generate the PWM for both DC motors. For the function, the SMCLK clock was used as the timer clock source and divided by 8. Up/Down mode was also enabled.
 
@@ -40,9 +40,9 @@ Next, the functions that initialized and controlled the direction of the motors 
 
 Timer_A0_PWM and motor drivers were tested using the function call to Drive_Pattern_1(). The robot was placed on the floor and executed a movement sequence that consist of moving forward, turning left, turning right, and moving backwards. In between each movement, it would stop the motors.
 
-Lastly, the Handle_Collision was implemented which would be called whenever the robot detects a collision. The Bumper_Switches_Handler() function would be updated to set collision_detected if the robot collides against a wall or an object. If collision_detected was set, it would execute Handle_Collision function. It would make the robot stop moving, reverse, turn right, and then, move forward. 
+Lastly, the Handle_Collision was implemented which would be called whenever the robot detected a collision. The Bumper_Switches_Handler() function would be updated to set collision_detected if the robot collided against a wall or an object. If collision_detected was set, it would execute Handle_Collision function. It would make the robot stop moving, reverse, turn right, and then, move forward. 
 
-The main takeaway from the lab is understanding how PWM, timers, GPIO, and interrupts worth together to control the robot.
+The main takeaway from the lab is understanding how PWM, timers, GPIO, and interrupts work together to control the robot.
 
 ## Known Issues or Limitations
 No known issues or limitations.
